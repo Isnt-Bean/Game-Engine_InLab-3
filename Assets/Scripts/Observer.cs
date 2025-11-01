@@ -12,11 +12,20 @@ public class Observer : MonoBehaviour
         text.text = "NPC Is Speaking";
     }
 
+    private void OnBlankDialog()
+    {
+        text.text = "";
+    }
+
     private void Awake()
     {
         if (npc != null)
         {
             npc.EnteredSpace += OnNPCSpeak;
+        }        
+        if (npc != null)
+        {
+            npc.DialogEmpty += OnBlankDialog;
         }
     }
 
@@ -25,6 +34,10 @@ public class Observer : MonoBehaviour
         if (npc != null)
         {
             npc.EnteredSpace -= OnNPCSpeak;
+        }
+        if (npc != null)
+        {
+            npc.DialogEmpty -= OnBlankDialog;
         }
     }
 }
