@@ -9,7 +9,7 @@ public class Observer : MonoBehaviour
 
     private void OnNPCSpeak()
     {
-        text.text = "NPC Is Speaking";
+        text.text = npc.newText;
     }
 
     private void OnBlankDialog()
