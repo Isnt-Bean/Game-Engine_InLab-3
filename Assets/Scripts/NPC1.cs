@@ -1,12 +1,12 @@
 using UnityEngine;
 using System;
 
-public class NPC : MonoBehaviour
+public class NPC1 : MonoBehaviour
 {
     public event Action EnteredSpace;
     public event Action DialogEmpty;
 
-    public String newText = "NPC 1 Is Speaking";
+    public String newText = "NPC 2 Is Speaking";
     
     private void Start()
     {
@@ -26,6 +26,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            //print("Player Entered");
             TalkToPlayer();
         }
     }
@@ -34,6 +35,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            //print("Player Exited");
             newText = "Why are you still talking to me?";
             BlankText();
         }
