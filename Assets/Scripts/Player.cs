@@ -2,13 +2,8 @@ using UnityEngine;
 using System;
 public class Player : MonoBehaviour
 {
-    public event Action ThingHappened;
 
     public float speed = 5f;
-    public void DoThing()
-    {
-        ThingHappened?.Invoke();
-    }
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");

@@ -1,30 +1,30 @@
 using UnityEngine;
 using System.Collections;
-
+using TMPro;
 
 public class Observer : MonoBehaviour
 {
-    [SerializeField] private Player subjectToObserve;
+    public NPC npc;
+    public TextMeshProUGUI text;
 
-    private void OnThingHappened()
+    private void OnNPCSpeak()
     {
-        // any logic that responds to event goes here
-        Debug.Log("Observer responds");
+        text.text = "NPC Is Speaking";
     }
 
     private void Awake()
     {
-        if (subjectToObserve != null)
+        if (npc != null)
         {
-            subjectToObserve.ThingHappened += OnThingHappened;
+            npc.EnteredSpace += OnNPCSpeak;
         }
     }
 
     private void OnDestroy()
     {
-        if (subjectToObserve != null)
+        if (npc != null)
         {
-            subjectToObserve.ThingHappened -= OnThingHappened;
+            npc.EnteredSpace -= OnNPCSpeak;
         }
     }
 }
