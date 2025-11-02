@@ -2,7 +2,8 @@
 
 ## Floccinaucinihilipilification Observer usage
 
-Diagrams
+<img width="621" height="611" alt="Observer Flowchart drawio" src="https://github.com/user-attachments/assets/67878790-95a1-48f8-be3a-ba232a8fb107" />
+
 
 Reflection questions: 
 
