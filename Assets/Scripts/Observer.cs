@@ -5,11 +5,16 @@ using TMPro;
 public class Observer : MonoBehaviour
 {
     public NPC npc;
+    public NPC1 npc2;
     public TextMeshProUGUI text;
+    public string npcText;
 
     private void OnNPCSpeak()
     {
-        text.text = npc.newText;
+        text.text = npcText;
+        //get the correct text file from either script
+
+
     }
 
     private void OnBlankDialog()
@@ -27,17 +32,13 @@ public class Observer : MonoBehaviour
         {
             npc.DialogEmpty += OnBlankDialog;
         }
-    }
-
-    private void OnDestroy()
-    {
-        if (npc != null)
+        if (npc2 != null)
         {
-            npc.EnteredSpace -= OnNPCSpeak;
-        }
-        if (npc != null)
+            npc2.EnteredSpace1 += OnNPCSpeak;
+        }        
+        if (npc2 != null)
         {
-            npc.DialogEmpty -= OnBlankDialog;
+            npc2.DialogEmpty += OnBlankDialog;
         }
     }
 }

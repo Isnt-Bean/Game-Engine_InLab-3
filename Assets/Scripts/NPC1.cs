@@ -1,13 +1,12 @@
 using UnityEngine;
 using System;
 
-public class NPC : MonoBehaviour
+public class NPC1 : MonoBehaviour
 {
-    public event Action EnteredSpace;
+    public event Action EnteredSpace1;
     public event Action DialogEmpty;
     public Observer o;
-    public String newText = "NPC 1 is talking";
-
+    public String newText = "NPC 2 is talking";
     
     private void Start()
     {
@@ -15,7 +14,7 @@ public class NPC : MonoBehaviour
     }
     private void TalkToPlayer()
     {
-        EnteredSpace?.Invoke();
+        EnteredSpace1?.Invoke();
     }
 
     private void BlankText()

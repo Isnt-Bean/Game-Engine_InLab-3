@@ -14,5 +14,12 @@ public class Player : MonoBehaviour
 
         // Apply movement
         transform.Translate(direction * speed * Time.deltaTime);
+
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
